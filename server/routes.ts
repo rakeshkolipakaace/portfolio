@@ -35,8 +35,8 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
   // Resume download endpoint
     app.get("/api/resume", (req, res) => {
-      const filePath = path.resolve('c:/Users/k.Rakesh/OneDrive/Desktop/Shivaram_Resume.pdf');
-      res.download(filePath, 'Shivaram_Resume.pdf', (err) => {
+  const filePath = path.resolve(__dirname, '../attached_assets/Shivaram_Resume_1755254963925.pdf');
+  res.download(filePath, 'Shivaram_Resume.pdf', (err) => {
         if (err) {
           res.status(500).json({ message: 'Failed to download resume.' });
         }
